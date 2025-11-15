@@ -48,6 +48,8 @@ $commissions = Commission::getPaginated($limitValue, $offset);
 $totalCom = Commission::countAll();
 $totalComPages = totalPages($totalCom, $limit);
 
+
+$allUsers = User::getAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -224,7 +226,7 @@ $totalComPages = totalPages($totalCom, $limit);
 
                 <select id="parentAffiliate" class="form-select mb-2">
                     <option value="">No Parent</option>
-                    <?php foreach ($users as $user): ?>
+                    <?php foreach ($allUsers  as $user): ?>
                         <option value="<?= $user['id'] ?>"><?= htmlspecialchars($user['name']) ?></option>
                     <?php endforeach; ?>
                 </select>
@@ -245,7 +247,7 @@ $totalComPages = totalPages($totalCom, $limit);
             <form id="createSaleForm">
                 <select id="saleAffiliate" class="form-select mb-2" required>
                     <option value="">Select Affiliate</option>
-                    <?php foreach ($users as $user): ?>
+                    <?php foreach ($allUsers  as $user): ?>
                         <option value="<?= $user['id'] ?>"><?= htmlspecialchars($user['name']) ?></option>
                     <?php endforeach; ?>
                 </select>
