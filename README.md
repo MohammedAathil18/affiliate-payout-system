@@ -8,8 +8,7 @@ Setup Instructions:
     PHP >= 7.4
     MySQL
     Apache / XAMPP
-    1.Database
-      Create the database:
+    1.Create the database:
         CREATE DATABASE affiliate_payout;
     2.Import the SQL file:
         mysql -u <username> -p affiliate_payout < database/affiliate_payout.sql
